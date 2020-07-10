@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29728.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SrzClient", "SrzClient\SrzClient.csproj", "{709146BA-24DE-40A2-9D08-A12F2AB96293}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSrzClientExample", "WebSrzClientExample\WebSrzClientExample.csproj", "{4806A98B-5390-42FC-AA12-3F380FE212DD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{709146BA-24DE-40A2-9D08-A12F2AB96293} = {709146BA-24DE-40A2-9D08-A12F2AB96293}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{709146BA-24DE-40A2-9D08-A12F2AB96293}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{709146BA-24DE-40A2-9D08-A12F2AB96293}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{709146BA-24DE-40A2-9D08-A12F2AB96293}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{709146BA-24DE-40A2-9D08-A12F2AB96293}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4806A98B-5390-42FC-AA12-3F380FE212DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4806A98B-5390-42FC-AA12-3F380FE212DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4806A98B-5390-42FC-AA12-3F380FE212DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4806A98B-5390-42FC-AA12-3F380FE212DD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {13C1A258-199A-4C37-B7C3-4F16C531CB2B}
+	EndGlobalSection
+EndGlobal
