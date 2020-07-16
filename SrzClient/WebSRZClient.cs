@@ -26,10 +26,6 @@ namespace SrzClient
         /// </summary>
         public int Timeout { get; set; } = 60000;
         /// <summary>
-        /// Лимит автоматических авторизаций в случае неожиданного разрыва сессии.
-        /// </summary>
-        public int AutoAuthorizeLimit { get; set; } = 3;
-        /// <summary>
         /// Указывает авторизована (true) или нет (false) учетная запись на портале СРЗ/
         /// </summary>
         public bool IsAuthorized { get; private set; }
@@ -464,11 +460,11 @@ namespace SrzClient
                 _VPOLIS = default,
                 _SPOLIS = default,
                 _NPOLIS = default,
-                _ST_OKATO = default,
+                //здесь я не уверен!!!
+                _ST_OKATO = person.PolicyOkato?.Split(new string[] { " " }, StringSplitOptions.None).FirstOrDefault(),
                 _SMO = default,
                 _SMO_OGRN = default,
-                //здесь я не уверен!!!
-                _SMO_OK = person.PolicyOkato?.Split(new string[] { " " }, StringSplitOptions.None).FirstOrDefault(),
+                _SMO_OK = default,
                 _SMO_NAM = person.PolicyCompany,
                 _SOC = default,
                 _NOVOR = default,
@@ -509,11 +505,9 @@ namespace SrzClient
                 personInfo._ADRESS = new PersonAdress
                 {
                     _P_ID = default,
-                    _RGN = default,
-                    //здесь я не уверен!!!
+                    _RGN = string.IsNullOrEmpty(person.RegAddress.Region) ? default : $"{person.RegAddress.RegionPrefix} {person.RegAddress.Region}",
                     _KRAY = string.IsNullOrEmpty(person.RegAddress.Region) ? default : $"{person.RegAddress.RegionPrefix} {person.RegAddress.Region}",
                     _RN = string.IsNullOrEmpty(person.RegAddress.District) ? default : $"{person.RegAddress.DistrictPrefix} {person.RegAddress.District}",
-                    //здесь я не уверен!!!
                     _TOWN = string.IsNullOrEmpty(person.RegAddress.Town) ? default : $"{person.RegAddress.TownPrefix} {person.RegAddress.Town}",
                     _CITY = string.IsNullOrEmpty(person.RegAddress.City) ? default : $"{person.RegAddress.CityPrefix} {person.RegAddress.City}",
                     _STREET = string.IsNullOrEmpty(person.RegAddress.Street) ? default : $"{person.RegAddress.StreetPrefix} {person.RegAddress.Street}",
